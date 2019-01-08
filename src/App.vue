@@ -46,17 +46,17 @@ export default {
             }, {
                 text: '分类',
                 icon: '#icon-fenlei',
-                path: '/list',
+                path: '/Goods/list',
                 name: 'List'
             }, {
                 text: '必喝阿尔寇',
                 icon: '#icon-gouwuche',
-                path: '/detail',
+                path: '/Goods/detail',
                 name: 'Detail'
             }, {
                 text: '购物车',
                 icon: '#icon-gouwuche',
-                path: '/cart',
+                path: '/Goods/cart',
                 name: 'Cart'
             }, {
                 text: '我的',

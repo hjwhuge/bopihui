@@ -9,10 +9,10 @@ Vue.use(VueRouter);
 
 // 引入路由组件
 import Home from '@com/Home';
-import List from '@com/List';
+import List from '@com/Goods/List';
+import Detail from '@com/Goods/Detail';
+import Cart from '@com/Goods/Cart';
 import Mine from '@com/Mine';
-import Cart from '@com/Cart';
-import Detail from '@com/Detail';
 import Login from '@com/Login';
 
 // 4.实例化路由并配置相关参数
@@ -26,22 +26,21 @@ import Login from '@com/Login';
           *子路由一般使用相对路径的path
 	 */
 const routes = [
-    // { path: '/', component: Home },
+    { path:'/',redirect:{name:'Home'}},
     { name:'Home', path: '/home', component: Home },
     { 
       name:'List', 
-      path: '/list', 
+      path: '/Goods/list', 
       component: List
     },
+    { name:'Detail', path: '/Goods/detail', component: Detail },
+    { name:'Cart', path: '/Goods/cart', component: Cart },
     { 
       name:'Mine', 
       path: '/mine', 
       component: Mine,
     },
     { name:'Login', path: '/login', component: Login },
-    { name:'Cart', path: '/cart', component: Cart },
-    { name:'Detail', path: '/detail', component: Detail },
-    { path:'/',redirect:{name:'Home'}}
   ]
 // 实例化路由
 let router = new VueRouter({
