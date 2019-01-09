@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 
 // 引入路由组件
 import Home from '@com/Home';
+import Search from '@com/Search';
 import List from '@com/Goods/List';
 import Detail from '@com/Goods/Detail';
 import Cart from '@com/Goods/Cart';
@@ -28,6 +29,7 @@ import Login from '@com/Login';
 const routes = [
     { path:'/',redirect:{name:'Home'}},
     { name:'Home', path: '/home', component: Home },
+    { name:'Search', path: '/search', component: Search },
     { 
       name:'List', 
       path: '/Goods/list', 

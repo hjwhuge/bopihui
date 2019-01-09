@@ -7,7 +7,7 @@
                 <svg class="icon" aria-hidden="true">
                   <use v-bind:xlink:href="tab.icon"></use>
                 </svg>
-                <p class="text">{{tab.text}}</p>
+                <div class="text">{{tab.text}}</div>
                 
             </mt-tab-item>
 
@@ -27,6 +27,7 @@ import MintUI from "mint-ui";
 Vue.use(MintUI);
 import "mint-ui/lib/style.css";
 
+import "./style/common.scss"
 
 import axios from 'axios';
 
@@ -76,35 +77,30 @@ export default {
 };
 </script>
 <style lang="scss">
-.current {
-    color: #f00;
-    font-weight: bold;
-}
 
 .mint-tabbar {
-
     .is-selected {
-        color: #58bc58;
-
+        color: #f00;
         svg {
-            color: #58bc58;
-            fill: #58bc58
+            color: #f00;
+            fill: #f00
         }
-
         .mint-tab-item-label {
-            color: #58bc58;
+            color: #f00;
         }
     }
+    // 设置导航处的字体大小
+    .mint-tab-item{
+        .mint-tab-item-label{
+            svg{
+                font-size:0.266667rem;
+            }
+        }
+        .text{
+            font-size:0.24rem
+        }
+    }
+    
 }
-
-
-.icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
 
 </style>
