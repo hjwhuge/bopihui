@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <router-view />
-        <mt-tabbar v-model="selected">
+        <mt-tabbar v-model="selected" :fixed="true">
             <mt-tab-item :id="tab.name" v-for="tab in tabs" :key="tab.name" @click.native="goto(tab.path)">
                 <!-- <myicons :type="tab.icon" /> -->
                 <svg class="icon" aria-hidden="true">
@@ -33,8 +33,6 @@ import axios from 'axios';
 
 // 把axios写入Vue的原型对象，方便后面调用
 Vue.prototype.$axios = axios;
-
-
 
 export default {
     data() {

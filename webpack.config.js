@@ -28,13 +28,13 @@ module.exports = {
         // host:'0.0.0.0',//localhost,127.0.0.1,ip地址都可以访问
         // open:true,
         // 服务器代理
-        proxy:{
-            '/dbapi':{
-                target:"http://api.douban.com/v2/movie",//代理目标服务器
-                changeOrigin: true,
-                pathRewrite: {'^/dbapi' : ''}, //替换部分路径，替换完之后会拼接到target的url后面去
-            }
-        }
+        // proxy:{
+        //     '/dbapi':{
+        //         target:"http://api.douban.com/v2/movie",//代理目标服务器
+        //         changeOrigin: true,
+        //         pathRewrite: {'^/dbapi' : ''}, //替换部分路径，替换完之后会拼接到target的url后面去
+        //     }
+        // }
     },
 
     resolve:{
