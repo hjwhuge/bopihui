@@ -1,3 +1,5 @@
-#过滤文件夹
+﻿#过滤文件夹
 doc/
 node_modules/
+data/
+server/

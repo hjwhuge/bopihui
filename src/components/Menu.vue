@@ -1,7 +1,6 @@
 <template>
-    <div class="container">
-        <router-view />
-        <mt-tabbar v-model="selected" :fixed="true">
+    <div class="page">
+    	<mt-tabbar v-model="selected" :fixed="true">
             <mt-tab-item :id="tab.name" v-for="tab in tabs" :key="tab.name" @click.native="goto(tab.path)">
                 <!-- <myicons :type="tab.icon" /> -->
                 <svg class="icon" aria-hidden="true">
@@ -13,29 +12,10 @@
     </div>
 </template>
 <script>
-import Vue from "vue";
-
-
-// 引入阿里巴巴图标
-// import "./assets/iconfont/iconfont.css";
-import icons from  "./assets/iconfont/iconfont.js";
-
-// 引入并使用MintUI
-import MintUI from "mint-ui";
-Vue.use(MintUI);
-import "mint-ui/lib/style.css";
-
-import "./style/common.scss"
-
-import axios from 'axios';
-
-// 把axios写入Vue的原型对象，方便后面调用
-Vue.prototype.$axios = axios;
-
 export default {
     data() {
-        return {
-            tabs: [{
+	    return {
+	      tabs: [{
                 text: '首页',
                 icon: '#icon-jiubei',
                 path: '/home',
@@ -48,7 +28,7 @@ export default {
             }, {
                 text: '必喝阿尔寇',
                 icon: '#icon-gouwuche',
-                path: '/Goods/detail/1',
+                path: '/Goods/detail',
                 name: 'Detail'
             }, {
                 text: '购物车',
@@ -63,14 +43,14 @@ export default {
             }],
             // 哪个选中就高亮哪个
             selected: 'Home'
-        }
-    },
+	    };
+	  },
     methods: {
         goto(path) {
             this.$router.push({ path });
         }
     }
-};
+}
 </script>
 <style lang="scss">
 

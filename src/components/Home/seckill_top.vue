@@ -2,12 +2,12 @@
     <div class="endtime">
         <div class="left">
             <span class="left_title">
-    			<img :src="title1" alt="">
+    			<img :src="title1" alt="" v-if="title1">
     			<img :src="title2" alt="" v-if="title2">
     		</span>
             <count-down :endTime="Times" :callback="callback" endText="已经结束了" id="clock"></count-down>
         </div>
-        <div class="right">
+        <div class="right" v-if="title1 && title2">
             <span>更多</span>
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-xiayiyeqianjinchakangengduo-yuankuang"></use>
@@ -27,7 +27,8 @@ export default {
     props: {
     	'Times':[String, Number],
     	'title1':{
-	        type: String
+	        type: String,
+            default: ''
 	      }, 
     	'title2':{
     		default: ''

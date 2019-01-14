@@ -1,0 +1,115 @@
+.details {
+    
+    background: #f2f2f2;
+    .mint-header {
+        background: #f00;
+
+        .mint-header-title{
+            font-size:0.24rem;
+            font-weight: 900;
+            height:0.266667rem;
+        }
+    }
+    .goods_abbr{
+        background: #fff;
+        .good_url{
+            margin-bottom:0.106667rem;
+            img{
+                width:5.0rem;
+            }
+        }
+        .good_price{
+            height:0.466667rem;
+            .price{
+                float:left;
+                font-size:0.24rem;
+                font-weight:900;
+                margin-left:0.16rem;
+                span:nth-child(1){
+                    color:#f00;
+                }
+                span:nth-child(2){
+                    color:#bcbcbc;
+                    del{
+                        span{
+                            color:#bcbcbc;
+                        }
+                    }
+                    
+                }
+            }
+            .bar_item{
+                float:right;
+                margin-right:0.213333rem;
+                color:#bcbcbc;
+                font-size:0.213333rem;
+            }
+        }
+        .endtime{
+            border-bottom:0 none;
+            margin-bottom:0.053333rem;
+        }
+        .barter{
+            padding-left:0.48rem;
+            padding-bottom:0.186667rem;
+            border-bottom:0.013333rem solid #ccc;
+            span{
+                padding: 0.026667rem 0.093333rem;
+                margin-right: 0.24rem;
+                border-radius: 0.066667rem;
+                color: #a5a5a5;
+                border: 0.013333rem solid #a5a5a5;
+            }
+        }
+        .good_info{
+            padding:0.24rem;
+            h3{
+                font-size: 0.266667rem;
+                line-height: 0.293333rem;
+                color: #333;
+            }
+            pre{
+                color: #9e9e9e;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            
+        }
+    }
+
+   .guess_lick{
+        margin-top:0.2rem;
+        background: #fff;
+        margin-bottom:90px;
+        .lick_item{
+            p{
+                font-size: 0.213333rem;
+                padding: 0.133333rem;
+                border-bottom: 0.013333rem solid #eee;
+            }
+        }
+        .lick_list{
+            ul li{
+                float: left;
+                width: 33.3%;
+                text-align: center;
+                img{
+                    max-width: 100%;
+                    max-height: 137.1.838133rem;
+                }
+                p{
+                    background-color: white;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding: 0 10px 0 10px;
+                    color: #868686;
+                    text-align: left;
+                }
+                .price{
+                    color:#f00;
+                }
+            }
+        }
+   }
+}
