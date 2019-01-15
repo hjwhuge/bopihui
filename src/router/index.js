@@ -11,10 +11,12 @@ Vue.use(VueRouter);
 import Home from '@com/Home';
 import Search from '@com/Search';
 import List from '@com/Goods/List';
+import Listbox from '@com/Goods/Listbox';
 import Detail from '@com/Goods/Detail';
 import Cart from '@com/Goods/Cart';
 import Mine from '@com/Mine';
 import Login from '@com/Login';
+
 
 // 4.实例化路由并配置相关参数
 	/*
@@ -34,6 +36,11 @@ const routes = [
       name:'List', 
       path: '/Goods/list', 
       component: List
+    },
+    { 
+      name:'Listbox', 
+      path: '/Goods/listbox', 
+      component: Listbox
     },
     { name:'Detail', path: '/Goods/detail', component: Detail },
     { name:'Cart', path: '/Goods/cart', component: Cart },
