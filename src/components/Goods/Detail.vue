@@ -69,7 +69,52 @@
           </ul>
         </div>
       </div>
-    </div>
+
+      <!-- 详情及评论 -->
+      <div class="comment">
+        <mt-navbar v-model="selected">
+          <mt-tab-item id="1">商品详情</mt-tab-item>
+          <mt-tab-item id="2">用户评价</mt-tab-item>
+        </mt-navbar>
+        <mt-tab-container v-model="selected">
+          <mt-tab-container-item id="1">
+            <mt-cell v-for="n in 6" :key="n">
+              <img :src="goods.url" alt="">
+            </mt-cell>
+          </mt-tab-container-item>
+          <mt-tab-container-item id="2">
+            <mt-cell v-for="n in 10" :key="n" :title="'content ' + n" />
+          </mt-tab-container-item>
+        </mt-tab-container>
+      </div>
+      <!-- 底部菜单 -->
+      <div class="menu">
+          <span class="kufu">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-kefu"></use>
+            </svg>
+            <p>客服</p>
+          </span>
+          <span class="sc">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-shoucang"></use>
+            </svg>
+            <p>收藏</p>
+          </span>
+          <span class="cart">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-gouwuche"></use>
+            </svg>
+            <p>购物车</p>
+          </span>
+          <span class="intocart">
+            加入购物车
+          </span>
+          <span class="buy">
+            立即购买
+          </span>
+      </div>
+  </div>
 </template>
 <script>
 import "../../style/detail.scss"
@@ -78,8 +123,9 @@ export default {
   data() {
     return {
       goods:{},
-      lick:[]
-    };
+      lick:[],
+      selected:'1'
+    }
   },
   components: {
       seckill
@@ -101,7 +147,7 @@ export default {
               return ( item.id >14 && item.id<21)
           });
           
-          console.log(this.lick)
+          // console.log(this.lick)
       }).catch(() => {});
       
   }

@@ -80,7 +80,6 @@
    .guess_lick{
         margin-top:0.2rem;
         background: #fff;
-        margin-bottom:90px;
         .lick_item{
             p{
                 font-size: 0.213333rem;
@@ -102,7 +101,7 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
-                    padding: 0 10px 0 10px;
+                    padding: 0 0.133333rem 0 0.133333rem;
                     color: #868686;
                     text-align: left;
                 }
@@ -110,6 +109,55 @@
                     color:#f00;
                 }
             }
+        }
+   }
+   .comment{
+        margin-top:0.2rem;
+        background: #fff;
+        
+        .mint-tab-container{
+            padding:0.2rem;
+            .mint-cell{
+                img{
+                    width:4.6rem;
+                }
+            }
+            
+        }
+       
+   }
+   .menu{
+        margin-bottom:120px;
+        height:0.72rem;
+        span{
+            display:block;
+            float:left;
+            text-align:center;
+        }
+        .kufu,.sc,.cart{
+            width:15%;
+            svg{
+                padding:0.053333rem 0;
+            }
+            p{
+                width:100%;
+            }
+        }
+        .intocart{
+            width:27.5%;
+            height:0.72rem;
+            line-height: 0.72rem;
+            font-size:0.24rem;
+            background: #000;
+            color:#fff;
+        }
+        .buy{
+            width:27.5%;
+            height:0.72rem;
+            line-height: 0.72rem;
+            font-size:0.24rem;
+            background: #f00;
+            color:#fff;
         }
    }
 }
