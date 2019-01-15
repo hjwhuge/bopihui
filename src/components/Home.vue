@@ -250,7 +250,6 @@ export default {
         return {
             recommend: [],
             nav: [],
-
             cx: [],
             zt:[],
             bk:[],
@@ -260,15 +259,8 @@ export default {
         }
     },
     components: {
-        seckill,
-        // Menu
-
-            cx: []
-        }
-    },
-    components:{
         seckill
-
+        // Menu   
     },
     methods: {
         goto(path) {
@@ -282,14 +274,9 @@ export default {
         }
     },
     created() {
-        // 获取首页静态图片
-        this.$axios.get("http://47.106.178.206:5010/home/lb")
 
-        }
-    },
-    created() {
-        
-        this.$axios.get("http://localhost:5555/home/lb")
+        // 获取首页静态图片
+        this.$axios.get("http://localhost:5010/home/lb")
 
             .then(res => {
                 // console.log(res);
@@ -327,9 +314,6 @@ export default {
                 // console.log(this.bk)
             }).catch(() => {});
 
-
-
-
     },
     mounted() {
         let mySwiper = new Swiper('.swiper-container', {
@@ -362,125 +346,10 @@ export default {
             },
         })
         
-
-            }).catch(() => {});
         
-    },
-    mounted() {
-        let mySwiper = new Swiper('.swiper-container', {
-                autoplay: true,
-                direction: 'vertical', // 垂直切换选项
-                loop: true, // 循环模式选项
-            })
-
     }
 };
 </script>
 <style lang="scss">
-
-.page{background: #f2f2f2;
-
-.mint-header {
-    background: #fff;
-    height:0.533333rem;
-    .Ewm {
-        font-size: 0.133333rem;
-    }
-
-    .Search {
-        font-size: 0.24rem;
-    }
-
-    h1 {
-        color: #f00;
-        font-size: 0.24rem;
-        font-weight: bold;
-        font-style: italic;
-    }
-}
-
-.mint-swipe img {
-    width: 100%;
-}
-
-.carousel {
-    height: 2.813333rem;
-}
-
-.bd img {
-    // height: 2.826667rem;
-    width:100%;
-}
-
-.nav {
-    overflow: hidden;
-    padding-bottom: 0.266667rem;
-    background: #fff;
-    li {
-        float: left;
-        width: 20%;
-        margin-top: 0.106667rem;
-
-        a {
-            display: block;
-            text-align: center;
-
-            img {
-                width:45px;
-                vertical-align: middle;
-                margin:0 auto;
-            }
-
-            span {
-                display: block;
-                padding-top: 0.106667rem;
-                color: #979797;
-            }
-        }
-    }
-}
-
-.sort_start {
-    ul li {
-        float: left;
-        width:33%;
-        img{
-            width:100%;
-        }
-    }
-}
-
-.toutiao {
-    height: 0.42rem;
-    padding: 0.266667rem;
-    padding-bottom:0.133333rem;
-    background: #fff;
-    .left_logo {
-        float: left;
-        width:0.453333rem;
-        height:0.48rem;
-        padding-right: 0.16rem;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .ringht_con {
-        height: 0.4rem;
-        overflow:hidden;
-        a {
-            display:block;
-            padding-top:0.08rem;
-            color: #363636;
-            font-size:0.186667rem;
-        }
-    }
-}
-    .endtime {
-        margin-bottom:4.0rem;
-    }
-
-}
 
 </style>

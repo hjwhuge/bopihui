@@ -43,7 +43,6 @@ const routes = [
       path: '/Goods/listbox', 
       component: Listbox
     },
-    { name:'Detail', path: '/Goods/detail', component: Detail },
     { name:'Cart', path: '/Goods/cart', component: Cart },
     { 
       name:'Mine', 

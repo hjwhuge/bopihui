@@ -102,7 +102,7 @@ module.exports = {
                     options:{
                         // 设置转换base64编码的临界值
                         limit:10000,
-                        name:'img/[name].[hash:7].[ext]'
+                        name:'img/[name].[hash:5].[ext]'
                     }
                 }
             }

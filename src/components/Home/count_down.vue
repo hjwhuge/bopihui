@@ -61,8 +61,6 @@ export default {
 
                     // this._callback();
 
-                    this._callback();
-
                 }
             }, 1000);
         },

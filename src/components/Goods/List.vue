@@ -77,7 +77,7 @@ export default {
         }
     },
     created(){
-        this.$axios.get("http://localhost:5555/list")
+        this.$axios.get("http://localhost:5010/list")
         .then(res => {
                 console.log(res.data.data);
                 // 根据条件获取不同分类的数据
