@@ -87,6 +87,7 @@ export default {
     }
     // 设置导航处的字体大小
     .mint-tab-item{
+
         // padding:0.0rem;
         .mint-tab-item-label{
             margin-bottom:0.053333rem;
@@ -96,9 +97,18 @@ export default {
         }
         .text{
             font-size:0.186667rem;
+
+        .mint-tab-item-label{
+            svg{
+                font-size:0.266667rem;
+            }
+        }
+        .text{
+            font-size:0.24rem
+
         }
     }
     
 }
-
+}
 </style>

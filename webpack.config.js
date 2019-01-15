@@ -29,10 +29,10 @@ module.exports = {
         // open:true,
         // 服务器代理
         // proxy:{
-        //     '/dbapi':{
-        //         target:"http://api.douban.com/v2/movie",//代理目标服务器
+        //     '/Api':{
+        //         target:"http://localhost:1809",//代理目标服务器
         //         changeOrigin: true,
-        //         pathRewrite: {'^/dbapi' : ''}, //替换部分路径，替换完之后会拼接到target的url后面去
+        //         pathRewrite: {'^/Api' : ''}, //替换部分路径，替换完之后会拼接到target的url后面去
         //     }
         // }
     },
@@ -102,7 +102,7 @@ module.exports = {
                     options:{
                         // 设置转换base64编码的临界值
                         limit:10000,
-                        name:'img/[name].[hash:7].[ext]'
+                        name:'img/[name].[hash:5].[ext]'
                     }
                 }
             }
