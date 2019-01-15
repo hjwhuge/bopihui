@@ -58,7 +58,11 @@ export default {
                 } else {
                     clearInterval(timer);
                     this.state = this.endText;
+
                     // this._callback();
+
+                    this._callback();
+
                 }
             }, 1000);
         },
