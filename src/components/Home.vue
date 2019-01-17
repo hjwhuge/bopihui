@@ -203,7 +203,7 @@
             </div>
             <div class="sort_start clearfix">
                 <ul>
-                    <li v-for="item of cx">
+                    <li v-for="item of cx" >
                         <a href="#">
                         <img :src="item.url" alt="">
                     </a>

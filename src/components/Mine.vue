@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <div class="username">
+                   <div class="username">
             <div class="uname">
                 <div class="quit">
                     <a href="#">退出</a>
@@ -74,60 +74,58 @@
                         售后
                     </a>
                 </li>
-                
-                
             </ul>
         </div>
         <div class="mytent">
             <ul>
-                <li>
-                    <a href="#">
+                <li @click="goto('collect')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-weibiaoti2fuzhi02" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>我的收藏</d>
+                            <span class="left">我的收藏</span>
                             <span class="iright">></span>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li @click="goto('comment')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-daipingjia20" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>我的评价</d>
+                            <span class="left">我的评价</span>
                             <span class="iright">></span>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li @click="goto('coupon')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-weibiaoti2fuzhi02" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>我的优惠劵</d>
+                            <span class="left">我的优惠券</span>
                             <span class="iright">></span>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li @click="goto('address')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-4" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>地址管理</d>
+                            <span class="left">地址管理</span>
                             <span class="iright">></span>
                         </div>
                     </a>
@@ -136,28 +134,28 @@
         </div>
         <div class="share">
             <ul>
-                <li>
-                    <a href="#">
+                <li @click="goto('share')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-yaoqingyouli" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>分享有礼</d>
+                            <span class="left">分享有礼</span>
                             <span class="iright">></span>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li @click="goto('merchants')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-guanyu" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>门店招商</d>
+                            <span class="left">门店招商</span>
                             <span class="iright">></span>
                         </div>
                     </a>
@@ -166,28 +164,28 @@
         </div>
         <div class="service">
             <ul>
-                <li>
-                    <a href="#">
+                <li @click="goto('share')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-kefu" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>在线客服</d>
+                            <span class="ileft">在线客服</span>
                             <span class="iright">></span>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li @click="goto('introduction')">
+                    <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-jiubei" class="lcon"></use>
                                 </svg>
                             </div>
-                            <d>关于泊啤汇</d>
+                            <span class="ileft">关于泊啤汇</span>
                             <span class="iright">></span>
                         </div>
                     </a>
@@ -201,13 +199,21 @@
             配送时间：9：00-20：30
         </div>
         <div class="mbot">
-
-        </div>
+         </div>   
     </div>
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+           
+        }
+    },
+    methods:{
+        goto(path){
+            this.$router.push({path:path})
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -342,7 +348,7 @@ export default {
                                 height: .533333rem;
                                 float:left;
                             }
-                            d{
+                            .left{
                                 font-size: .186667rem;
                                 margin-left:.066667rem;
                             }
