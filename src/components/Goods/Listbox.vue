@@ -1,12 +1,12 @@
 <template>
     <div class="list">
         <div class="top">
-            <div class="tople">
-                <
-            </div>
-            <div class="topcot">
-                商品列表 全国爆款
-            </div>
+            <mt-header title="我的优惠券" class="aa">
+
+                    <mt-button icon="back" slot="left" @click="goback">返回</mt-button>
+
+                <mt-button slot="right"></mt-button>
+            </mt-header>
         </div>
         <div class="warp">
             <div class="main_list">
@@ -75,7 +75,12 @@ export default {
             }
             this.zong = aa;
             this.current=idx;
+        },
+         goback:function(){
+            this.$router.go(-1)
+
         }
+
     },
     created(){
         this.$axios.get("http://localhost:5010/list")
@@ -101,28 +106,15 @@ export default {
 <style lang="scss" scoped>
     .list{
         .top{
-            z-index: 1;
-            background: #e53935;
-            height: .653333rem;
-            width: 100%;
-            .tople{
-                font-size:30px;
-                height: .24rem;
-                line-height: .24rem;
-                padding: .173333rem 0 0 .133333rem;
-                min-width: .666667rem;
-                float:left;
-                font-weight: bold;
-                color:#fff;
+            // z-index: 1;
+            
+            // height: .653333rem;
+            // width: 100%;
+            .aa{
+                background: #e53935;
+                height: .653333rem;
             }
-            .topcot{
-                width:3.466667rem;
-                float:left;
-                text-align: center;
-                color: #fff;
-                font-size: .24rem;
-                line-height: .653333rem;
-            }
+            
         }
         .warp{
             width: 100%;

@@ -14,7 +14,12 @@
                     <ul class="collectlist">
                         <li class="collect_li">
                             <div class="aa">
-                                yes
+                                <p>贵州茅台998*1瓶 2019/1/23</p>
+                                <p class="a1">白酒雪碧加红牛，黄泉路上不回头，雪碧红牛掺白酒，黄泉路上走一走。我有故事也有酒，谁能陪我喝一宿？</p>
+                                <p class="a2">
+                                    <span class="ab"></span>
+                                    <span>匿名：断肠人</span>
+                                </p>
                             </div>
                         </li>
                     </ul>
@@ -57,7 +62,26 @@ export default {
                         overflow: auto;
                         margin-bottom: .4rem;
                         li{
-
+                            .aa{
+                                border:1px dashed #333;
+                                padding:.133333rem;
+                                margin-top:.266667rem;
+                                .a1{
+                                    font-size: .186667rem;
+                                    color:#333;
+                                }
+                                .a2{
+                                    margin-top:.133333rem;
+                                    .ab{
+                                        display:inline-block;
+                                        width: 75%;
+                                    }
+                                    span{
+                                        font-size: .186667rem;
+                                        color:#333;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

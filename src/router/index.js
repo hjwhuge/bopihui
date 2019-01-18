@@ -23,6 +23,7 @@ import Address from '@com/Mine/Address';
 import Share from '@com/Mine/Share';
 import Merchants from '@com/Mine/Merchants';
 import Introduction from '@com/Mine/Introduction';
+import Service from '@com/Mine/Service';
 // 4.实例化路由并配置相关参数
 	/*
 		* 配置相关参数
@@ -56,6 +57,7 @@ const routes = [
     { name:'Share', path: '/share', component: Share },
     { name:'Merchants', path: '/merchants', component: Merchants },
     { name:'Introduction', path: '/introduction', component: Introduction },
+    { name:'Service', path: '/service', component: Service },
     { 
       name:'Mine',
       path: '/mine', 

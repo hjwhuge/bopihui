@@ -164,7 +164,7 @@
         </div>
         <div class="service">
             <ul>
-                <li @click="goto('share')">
+                <li @click="goto('service')">
                     <a href="javascript:;">
                         <div class="mycon">
                             <div class="ileft">
@@ -172,7 +172,7 @@
                                     <use xlink:href="#icon-kefu" class="lcon"></use>
                                 </svg>
                             </div>
-                            <span class="ileft">在线客服</span>
+                            <span class="left">在线客服</span>
                             <span class="iright">></span>
                         </div>
                     </a>
@@ -185,7 +185,7 @@
                                     <use xlink:href="#icon-jiubei" class="lcon"></use>
                                 </svg>
                             </div>
-                            <span class="ileft">关于泊啤汇</span>
+                            <span class="left">关于泊啤汇</span>
                             <span class="iright">></span>
                         </div>
                     </a>
@@ -349,6 +349,8 @@ export default {
                                 float:left;
                             }
                             .left{
+                                font-size: .186667rem;
+                                line-height: .533333rem;
                                 font-size: .186667rem;
                                 margin-left:.066667rem;
                             }
