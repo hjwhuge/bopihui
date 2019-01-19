@@ -19,8 +19,14 @@ import Mine from '@com/Mine';
 import Collect from '@com/Mine/Collect';
 
 import Login from '@com/Login';
-
-
+import Collect from '@com/Mine/Collect';
+import Comment from '@com/Mine/Comment';
+import Coupon from '@com/Mine/Coupon';
+import Address from '@com/Mine/Address';
+import Share from '@com/Mine/Share';
+import Merchants from '@com/Mine/Merchants';
+import Introduction from '@com/Mine/Introduction';
+import Service from '@com/Mine/Service';
 // 4.实例化路由并配置相关参数
 	/*
 		* 配置相关参数
@@ -52,23 +58,23 @@ const routes = [
       component: AddCart
     },
     { name:'Cart', path: '/Goods/cart', component: Cart },
-    // { path: '/mine/collect', component: Collect },
-    // { 
-    //   name:'Mine', 
-    //   path: '/mine', 
-    //   component: Mine,
-    // },
+    { name:'Collect', path: '/collect', component: Collect },
+    { name:'Comment', path: '/comment', component: Comment },
+    { name:'Coupon', path: '/coupon', component: Coupon },
+    { name:'Address', path: '/address', component: Address },
+    { name:'Share', path: '/share', component: Share },
+    { name:'Merchants', path: '/merchants', component: Merchants },
+    { name:'Introduction', path: '/introduction', component: Introduction },
+    { name:'Service', path: '/service', component: Service },
     { 
-        path: '/mine', 
-        component: Mine,
-        children:[
-          { 
-            path: 'collect', 
-            component: Collect
-          }
-        ]
-      },
+      name:'Mine',
+      path: '/mine', 
+      component: Mine,
+      
+    },
+    { name:'Cart', path: '/Goods/cart', component: Cart },
     { name:'Login', path: '/login', component: Login },
+    { name:'bbb', path: '/collect', component: Collect },
   ]
 // 实例化路由
 let router = new VueRouter({

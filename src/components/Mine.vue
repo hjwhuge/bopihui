@@ -1,21 +1,220 @@
 <template>
     <div class="page">
-
-        <Menu selected="Mine"/>
+                   <div class="username">
+            <div class="uname">
+                <div class="quit">
+                    <a href="#">退出</a>
+                </div>
+                <div class="myuser">
+                    <div class="via">      
+                        <img src="../images/list/m1.png" alt="">
+                    </div>
+                    <div class="name">
+                        <b>啤啤距</b>
+                        <p>
+                            <span>余额：¥0元</span>
+                            <span>积分：0</span>
+                        </p>
+                    </div>
+                    <p class="icon1"> > </p>
+                </div>
+            </div>
+        </div>
+        <div class="indent">
+            <div class="title">
+                <span class="left">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-daifukuan01" class="lcon"></use>
+                    </svg>
+                    <span>我的订单</span>
+                </span>
+                <span class="right">
+                    <span>查看全部订单</span>
+                    <a>></a>
+                </span>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-50" class="lcon"></use>
+                            </svg>
+                        </span>
+                        待付款
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-weibiaoti2fuzhi02" class="lcon"></use>
+                            </svg>
+                        </span>
+                        待发货
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-daipingjia20" class="lcon"></use>
+                            </svg>
+                        </span>
+                        待评价
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wodedingdan" class="lcon"></use>
+                            </svg>
+                        </span>
+                        售后
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mytent">
+            <ul>
+                <li @click="goto('collect')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-weibiaoti2fuzhi02" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">我的收藏</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+                <li @click="goto('comment')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-daipingjia20" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">我的评价</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+                <li @click="goto('coupon')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-weibiaoti2fuzhi02" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">我的优惠券</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+                <li @click="goto('address')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-4" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">地址管理</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="share">
+            <ul>
+                <li @click="goto('share')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-yaoqingyouli" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">分享有礼</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+                <li @click="goto('merchants')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-guanyu" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">门店招商</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="service">
+            <ul>
+                <li @click="goto('service')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-kefu" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">在线客服</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+                <li @click="goto('introduction')">
+                    <a href="javascript:;">
+                        <div class="mycon">
+                            <div class="ileft">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-jiubei" class="lcon"></use>
+                                </svg>
+                            </div>
+                            <span class="left">关于泊啤汇</span>
+                            <span class="iright">></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tel">
+            客服电话：0577-86191919
+        </div>
+        <div class="timeuser">
+            配送时间：9：00-20：30
+        </div>
+        <div class="mbot">
+         </div>   
     </div>
 </template>
 <script>
 import Menu from './Menu';
 export default {
-    methods: {
-        goto(){console.log(111)
-            this.$router.push({path:'/mine/collect'});
+    data(){
+        return{
+           
         }
     },
-    components:{
-        Menu
+    methods:{
+        goto(path){
+            this.$router.push({path:path})
+        }
     }
-
 }
 </script>
 <style lang="scss" scoped>
@@ -150,7 +349,9 @@ export default {
                                 height: .533333rem;
                                 float:left;
                             }
-                            d{
+                            .left{
+                                font-size: .186667rem;
+                                line-height: .533333rem;
                                 font-size: .186667rem;
                                 margin-left:.066667rem;
                             }

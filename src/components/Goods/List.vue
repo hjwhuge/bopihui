@@ -1,8 +1,8 @@
 <template>
     <div class="page">
         <div class="top">
-            <div class="tople">
-                
+            <div class="tople" @click="goback">
+
             </div>
             <div class="topcot">
                 分类
@@ -21,10 +21,10 @@
         <div class="contright">
             <div class="rightget">
                 <a href="#" >啤酒</a>
-                <a href="#">查看全部</a>
+                <a href="javascript:;" @click="goto">查看全部</a>
             </div>
             <div class="rightbot">
-                <a v-for="(item,idx) in zong" v-bind:key="idx">
+                <a v-for="(item,idx) in zong" v-bind:key="idx" @click="goto">
                     <div>
                         <img :src=item.imgur>
                         <span>{{item.origin}}</span>
@@ -78,6 +78,12 @@ export default {
             }
             this.zong = aa;
             this.current=idx;
+        },
+        goback:function(){
+            this.$router.go(-1)
+        },
+         goto(path){
+            this.$router.push({path:'listbox'})
         }
     },
     created(){
@@ -121,7 +127,6 @@ export default {
                 padding: .173333rem 0 0 .133333rem;
                 min-width: .666667rem;
                 float:left;
-                font-weight: bold;
                 color:#fff;
             }
             .topcot{
