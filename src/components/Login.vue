@@ -1,67 +1,83 @@
 <template>
-  <div class="page">
+    <div class="page">
 
-      <div class="top">
-          <div class="tople">
-              <
-          </div>
-          <div class="topcot">
-              登录
-          </div>
-          <div class="topri">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-sousuo" class="lcon"></use>
-              </svg>
-          </div>
-      </div>
-      <div class="login">
-          <div class="telephone">
-              <div class="mobile">
-                  手机登录
-              </div>
-          </div>
-          <div class="phoneverify ">
-                <div class="number">
-                  <input type="text" class="phone" placeholder="请输入手机号">
-                </div>
-                <div class="second">
-                  <input type="button" class="btnphone" value="发送验证码">
+        <div class="top">
+            <div class="tople" @click="goback">
+
+            </div>
+            <div class="topcot">
+                登录
+            </div>
+            <div class="topri">
+                    <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-sousuo" class="lcon"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="login">
+            <div class="telephone">
+                <div class="mobile">
+                    手机登录
                 </div>
             </div>
-          <div class="note">
-              <input type="text" placeholder="请输入手机短信中的验证码" class="noteverify">
-          </div>
-          <div class="btnenter">
-              <input type="button" class="btn" value="登录" >
-          </div>
-          <div class="wei">
-              <div class="weibtn">
-                  <img src="../images/list/weixin.png" alt="">
-              </div>
-              <div class="weienter">
-                  <p>微信登录</p>
-                  <div class="backpass">
-                      <span>
-                          找回密码
-                      </span>
-                      <span style="margin-right:5px;">
-                          注册
-                      </span>
-                  </div>
-              </div>
-          </div>
-      </div>
+            <div class="phoneverify ">
+                    <div class="number">
+                    <input type="text" class="phone" placeholder="请输入手机号" maxlength="11" ref="inf">
+                    </div>
+                    <div class="second">
+                    <input type="button" class="btnphone" value="发送验证码" maxlength="6">
+                    </div>
+                </div>
+            <div class="note">
+                <input type="text" placeholder="请输入手机短信中的验证码" class="noteverify" maxlength="6">
+            </div>
+            <div class="btnenter">
+                <input type="button" class="btn" value="登录" @click="goto" >
+            </div>
+            <div class="wei">
+                <div class="weibtn">
+                    <img src="../images/list/weixin.png" alt="">
+                </div>
+                <div class="weienter">
+                    <p>微信登录</p>
+                    <div class="backpass">
+                        <span>
+                            找回密码
+                        </span>
+                        <span style="margin-right:5px;">
+                            注册
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  </div>
+    </div>
 </template>
 <script>
-
+var storage=window.localStorage;
 export default {
   data() {
     return {
-       
-    };
+        telnumber:''
+    }
   },
+  methods:{
+        goto(){
+            this.telnumber = this.$refs.inf.value;
+            storage["a"]=this.telnumber;
+            var a=storage.a;
+            if(a){
+                this.$router.push({path:'home'});
+                this.$refs.inf.value = "";
+            }else{
+                console.log(2);
+            }
+        },
+        goback:function(){
+            this.$router.go(-1)
+        }
+  }
 };
 </script>
 <style lang="scss" scoped>
