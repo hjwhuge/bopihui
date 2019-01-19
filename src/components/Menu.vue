@@ -32,7 +32,7 @@ export default {
             }, {
                 text: '购物车',
                 icon: '#icon-gouwuche',
-                path: '/Goods/cart',
+                path: '/Goods/cart/1',
                 name: 'Cart'
             }, {
                 text: '我的',

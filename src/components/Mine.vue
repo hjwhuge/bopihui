@@ -200,6 +200,7 @@
         </div>
         <div class="mbot">
          </div>   
+         <Menu selected="Mine"/>
     </div>
 </template>
 <script>
@@ -209,6 +210,9 @@ export default {
         return{
            
         }
+    },
+    components: {
+        Menu   
     },
     methods:{
         goto(path){

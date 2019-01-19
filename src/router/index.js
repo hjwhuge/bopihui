@@ -16,7 +16,6 @@ import Detail from '@com/Goods/Detail';
 import AddCart from '@com/Goods/addCart';
 import Cart from '@com/Goods/Cart';
 import Mine from '@com/Mine';
-import Collect from '@com/Mine/Collect';
 
 import Login from '@com/Login';
 import Collect from '@com/Mine/Collect';
@@ -57,7 +56,8 @@ const routes = [
       path: '/addCart/:id', 
       component: AddCart
     },
-    { name:'Cart', path: '/Goods/cart', component: Cart },
+    // seen传1可以看见底部菜单，0不可以看见底部菜单
+    { name:'Cart', path: '/Goods/cart/:seen', component: Cart,meta:{requireAuth:true}},
     { name:'Collect', path: '/collect', component: Collect },
     { name:'Comment', path: '/comment', component: Comment },
     { name:'Coupon', path: '/coupon', component: Coupon },
@@ -70,9 +70,11 @@ const routes = [
       name:'Mine',
       path: '/mine', 
       component: Mine,
+      meta:{
+        requireAuth:true
+      }
       
     },
-    { name:'Cart', path: '/Goods/cart', component: Cart },
     { name:'Login', path: '/login', component: Login },
     { name:'bbb', path: '/collect', component: Collect },
   ]
@@ -82,5 +84,24 @@ let router = new VueRouter({
     routes
 });
 
+// 全局路由守卫
+// 1、在进入某个路由前执行的代码
+router.beforeEach((to,from,next)=>{
+  //做路由拦截
+  if(to.meta.requireAuth){
+    // 判断是否登录
+    if(sessionStorage.getItem('token')){
+      // if(router.app.$store.state.token){
+          next();
+      }else{
+          next({
+              path:'/login'
+          })
+      }
+  }else{
+    // 要进入to路由，必须调用next()方法
+      next();
+  }
+});
 
 export default router;

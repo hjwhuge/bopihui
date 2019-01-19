@@ -113,7 +113,7 @@ export default {
         this.num ++;
     },
     toCart(id){
-        // this.$router.go(-1);
+        this.$router.go(-1);
         // 查询
         this.$axios.get(`http://localhost:5010/cart?id=${id}`).then(res=>{
             // n用来判断当前数据是否存在数据库，m用来获取之前存在数据库的数量

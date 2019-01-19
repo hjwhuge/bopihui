@@ -139,7 +139,7 @@ export default {
       this.$router.push('/addCart/'+goodsId)
     },
     toCart(){
-      this.$router.push('/Goods/cart')
+      this.$router.push('/Goods/cart/0')
     }
   },
   components: {

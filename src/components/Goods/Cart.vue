@@ -2,7 +2,7 @@
     <div class="cart">
     <!-- 头部 -->
     	<mt-header title="购物车">
-        <mt-button slot="left"  @click="goBack">
+        <mt-button slot="left"  @click="goBack" v-if="!seen">
           <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-fanhui"></use>
           </svg>
@@ -14,17 +14,17 @@
                 <li v-for='item in goods' :key="item.name" class="clearfix">
                     <div class="goods_left">
                         <div class="goods_url">
-                            <img :src="item.url" alt="">
+                            <img :src="item.url" alt=""  @click="goDetail('Detail',item.id)">
                         </div> 
                     </div>
                     <div class="goods_right">
                         <div class="goods_title">
-                            <p>{{item.title}}</p>
+                            <p @click="goDetail('Detail',item.id)">{{item.title}}</p>
                         </div>
                         <div class="goods_detail">
                             <span class="goods_price">￥{{(item.price*item.num).toFixed(1)}}</span>
                             <div class="goods_num">
-                                <span class="down" @click="down(item.id,item.num)">-</span><span class="num">{{item.num}}</span><span class="up" @click="up(item.id,item.num)">+</span>
+                                <span :class="{down:true,colors:item.isLed}" @click="down(item.id,item.num)">-</span><span class="num">{{item.num}}</span><span class="up" @click="up(item.id,item.num)">+</span>
                             </div>
                             <div class="goods_del" @click="del(item.id)">
                                 <svg class="icon" aria-hidden="true">
@@ -38,7 +38,7 @@
             </ul>
         </div>
     <!-- 底部按钮 -->
-    <div class="bottom clearfix">
+    <div :class="{bottom:true,clearfix:true,marginb:seen}">
           <span class="sum">
             合计￥ <i>{{sum}}</i>
           </span>
@@ -46,16 +46,22 @@
             结算
           </span>
       </div>
+      <Menu selected="Cart" v-if="seen"/>
   </div>
 </template>
 <script>
 import Qs from 'qs'
+import Menu from '../Menu';
 export default {
   data() {
     return {
-        goods:[]
+        goods:[],
+        seen:false
     }
   },
+  components: {
+        Menu   
+    },
   computed:{
       sum:function (){
           let sum = 0;
@@ -68,27 +74,43 @@ export default {
       }
   },
   methods:{
+        goDetail(name,id) {
+            let obj = {name}
+            obj.params = {id}
+            this.$router.push(obj)
+        },
       down(id,number){
+        //   console.log(number)
+        //   if(number=2){
+        //       
+        //   }
           this.goods.filter(item=>{
               if(item.id == id){
-                  item.num--
+                  if(item.num<=2){
+                      item.num = 1;
+                      item.isLed = true;
+                  }else{
+                      item.num--
+                  }
               }
               return item;
           })
         //   console.log(this.goods)
-          this.$axios(
-            {
-                method: 'post',
-                url: 'http://localhost:5010/cart',
-                data: {
-                    'id':id,
-                    'num':number-1,
-                },
-            transformRequest: [function (data) {
-            // 对 data 进行任意转换处理
-                return Qs.stringify(data)
-            }],
-        })
+        if(number>=2){
+            this.$axios(
+              {
+                  method: 'post',
+                  url: 'http://localhost:5010/cart',
+                  data: {
+                      'id':id,
+                      'num':number-1,
+                  },
+              transformRequest: [function (data) {
+              // 对 data 进行任意转换处理
+                  return Qs.stringify(data)
+              }],
+          })
+        }
       },
       up(id,number){
           this.goods.filter(item=>{
@@ -132,9 +154,21 @@ export default {
        }
   },
   created() {
+    let seen = this.$route.params.seen;
+    // console.log(seen)
+    if(seen == 1){
+        this.seen = true;
+
+    }else{
+        this.seen = false;
+    }
+    // console.log(this.seen)
     this.$axios.get('http://localhost:5010/cart').then(res=>{
         // console.log(res)
         let goods = res.data.data;
+        goods.map(item=>{
+            return item.isLed = false;
+        })
         this.goods = goods;
         // console.log(this.goods)
       })
@@ -257,6 +291,9 @@ export default {
                 height: .666667rem;
                 line-height: .666667rem;
             }
+        }
+        .marginb{
+            bottom:.8rem;
         }
         
     }
