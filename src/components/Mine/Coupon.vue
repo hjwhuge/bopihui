@@ -54,9 +54,6 @@ export default {
                     height: .653333rem;
                 }
         }
-        .tabplay{
-            
-        }
         .colcontent{
             padding-bottom:.8rem;
             width: 100%;
