@@ -40,10 +40,10 @@
         </div>
         <div class="sort_start clearfix">
             <ul>
-                <li v-for="item of cx">
+                <li v-for="item of cx" :key="item.url">
                     <a href="#">
-                    <img :src="item.url" alt="">
-                </a>
+                        <img :src="item.url" alt="">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -188,53 +188,7 @@
             </div>
         </div>
 
-        <!-- <menu/> -->
-
-            <!-- 导航 -->
-            <div class="nav">
-                <ul>
-                    <li v-for="item in nav" :key="item.id">
-                        <a href="#">
-                      <img :src="item.url" alt="">
-                      <span>{{item.name}}</span>
-                    </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sort_start clearfix">
-                <ul>
-                    <li v-for="item of cx">
-                        <a href="#">
-                        <img :src="item.url" alt="">
-                    </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- 头条 -->
-            <div class="toutiao">
-                <div class="left_logo">
-                    <img src="//img.bphapp.com/public/attachment/201808/20/16/bbb.png?x-oss-process=image/quality,Q_80" alt="">
-                </div>
-                <div class="ringht_con">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="http://www.bphapp.com/wap/index.php?ctl=notice&data_id=11">旧版客服系统将在9月15日停止</a></div>
-                        <div class="swiper-slide"><a href="http://www.bphapp.com/wap/index.php?ctl=notice&data_id=16">温州市区门店配送费统一收费公告</a></div>
-                        <div class="swiper-slide"><a href="http://www.bphapp.com/wap/index.php?ctl=notice&data_id=18">2019年1月2日0元抽奖中奖名单公布</a></div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 超级秒杀 -->
-            <div class="endtime">
-                <seckill Times="1547299257790" title1="//img.bphapp.com/public/attachment/201808/20/16/chaojimiaosha.png" title2="//img.bphapp.com/public/attachment/201808/20/16/sale.png" />
-            </div> 
-
-            <!-- 限时抢购 -->
-            <div class="endtime">
-                <seckill Times="1547499257790" title1="//img.bphapp.com/public/attachment/201808/20/16/xianshiqianggou.png" />
-            </div> 
+        <Menu selected="Home"/>
 
     </div>
 </template>
@@ -243,8 +197,8 @@ import Swiper from "swiper";
 import seckill from "./Home/seckill_top"
 
 import "../style/home.scss"
-// import menu from "./Menu" 
 
+import Menu from './Menu';
 export default {
     data() {
         return {
@@ -259,8 +213,7 @@ export default {
         }
     },
     components: {
-        seckill
-        // Menu   
+        seckill,Menu   
     },
     methods: {
         goto(path) {

@@ -1,15 +1,15 @@
 <template>
     <div class="details">
       <!-- 头部 -->
-    	<mt-header title="商品详情">
+    	<mt-header fixed title="商品详情">
         <mt-button slot="left">
-          <svg class="icon" aria-hidden="true">
+          <svg class="icon" @click="goBack" aria-hidden="true">
               <use xlink:href="#icon-fanhui"></use>
           </svg>
         </mt-button>
         <mt-button slot="right">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-home"></use>
+            <svg class="icon" @click="toHome" aria-hidden="true">
+                <use xlink:href="#icon-fenxiang"></use>
             </svg>
         </mt-button>
       </mt-header>
@@ -101,13 +101,13 @@
             </svg>
             <p>收藏</p>
           </span>
-          <span class="cart">
+          <span class="cart" @click="toCart">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-gouwuche"></use>
             </svg>
             <p>购物车</p>
           </span>
-          <span class="intocart">
+          <span class="intocart" @click="addCart(goodsId)">
             加入购物车
           </span>
           <span class="buy">
@@ -124,15 +124,31 @@ export default {
     return {
       goods:{},
       lick:[],
-      selected:'1'
+      selected:'1',
+      goodsId:''
+    }
+  },
+  methods:{
+    goBack(){
+      this.$router.go(-1)
+    },
+    toHome(){
+      this.$router.push('/home')
+    },
+    addCart(goodsId){
+      this.$router.push('/addCart/'+goodsId)
+    },
+    toCart(){
+      this.$router.push('/Goods/cart')
     }
   },
   components: {
       seckill
   },
   created() {
-  	let id = this.$route.params.id;
-    console.log(this.$route.params.id)
+    let id = this.$route.params.id;
+    this.goodsId = id;
+    // console.log(this.$route.params.id)
       //this.$route.params.id:获取动态路由后面的id
     this.$axios.get(`http://localhost:5010/detail?id=${id}`).then(res=>{
         let goods = res.data.data[0];

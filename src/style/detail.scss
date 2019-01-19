@@ -114,7 +114,7 @@
    .comment{
         margin-top:0.2rem;
         background: #fff;
-        
+        margin-bottom:50px;
         .mint-tab-container{
             padding:0.2rem;
             .mint-cell{
@@ -127,12 +127,18 @@
        
    }
    .menu{
-        margin-bottom:120px;
+        position:fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
         height:0.72rem;
         span{
             display:block;
             float:left;
             text-align:center;
+            background: #fff;
+            height:0.72rem;
         }
         .kufu,.sc,.cart{
             width:15%;

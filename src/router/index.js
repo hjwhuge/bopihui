@@ -13,8 +13,11 @@ import Search from '@com/Search';
 import List from '@com/Goods/List';
 import Listbox from '@com/Goods/Listbox';
 import Detail from '@com/Goods/Detail';
+import AddCart from '@com/Goods/addCart';
 import Cart from '@com/Goods/Cart';
 import Mine from '@com/Mine';
+import Collect from '@com/Mine/Collect';
+
 import Login from '@com/Login';
 
 
@@ -43,12 +46,28 @@ const routes = [
       path: '/Goods/listbox', 
       component: Listbox
     },
-    { name:'Cart', path: '/Goods/cart', component: Cart },
     { 
-      name:'Mine', 
-      path: '/mine', 
-      component: Mine,
+      name:'AddCart', 
+      path: '/addCart/:id', 
+      component: AddCart
     },
+    { name:'Cart', path: '/Goods/cart', component: Cart },
+    // { path: '/mine/collect', component: Collect },
+    // { 
+    //   name:'Mine', 
+    //   path: '/mine', 
+    //   component: Mine,
+    // },
+    { 
+        path: '/mine', 
+        component: Mine,
+        children:[
+          { 
+            path: 'collect', 
+            component: Collect
+          }
+        ]
+      },
     { name:'Login', path: '/login', component: Login },
   ]
 // 实例化路由

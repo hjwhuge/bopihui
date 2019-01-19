@@ -2,7 +2,7 @@
     <div class="page">
         <div class="top">
             <div class="tople">
-                <
+                
             </div>
             <div class="topcot">
                 分类
@@ -32,10 +32,11 @@
                 </a>
             </div>
         </div>
+        <Menu selected="List"/>
     </div>
 </template>
 <script>
-
+import Menu from '../Menu';
 export default {
     data(){
         return{
@@ -49,6 +50,9 @@ export default {
             zong:[],
             current:0
         }
+    },
+    components: {
+        Menu   
     },
     methods:{
         // 根据获取到分类的idx，获取不同的数据赋值给zong[]，从而渲染页面
@@ -79,7 +83,7 @@ export default {
     created(){
         this.$axios.get("http://localhost:5010/list")
         .then(res => {
-                console.log(res.data.data);
+                // console.log(res.data.data);
                 // 根据条件获取不同分类的数据
                 this.cone = res.data.data.filter(item =>  item.money < 370);
                 this.zong = this.cone;
