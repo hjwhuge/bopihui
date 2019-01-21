@@ -100,7 +100,7 @@ export default {
             this.$axios(
               {
                   method: 'post',
-                  url: 'http://localhost:5010/cart',
+                  url: 'http://hujiawei.top:5010/cart',
                   data: {
                       'id':id,
                       'num':number-1,
@@ -122,7 +122,7 @@ export default {
           this.$axios(
             {
                 method: 'post',
-                url: 'http://localhost:5010/cart',
+                url: 'http://hujiawei.top:5010/cart',
                 data: {
                     'id':id,
                     'num':number+1,
@@ -143,7 +143,7 @@ export default {
           this.$axios(
             {
                 method: 'delete',
-                url: 'http://localhost:5010/cart',
+                url: 'http://hujiawei.top:5010/cart',
                 params: {
                     'id':id
                 }
@@ -163,7 +163,7 @@ export default {
         this.seen = false;
     }
     // console.log(this.seen)
-    this.$axios.get('http://localhost:5010/cart').then(res=>{
+    this.$axios.get('http://hujiawei.top:5010/cart').then(res=>{
         // console.log(res)
         let goods = res.data.data;
         goods.map(item=>{

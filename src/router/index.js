@@ -80,7 +80,8 @@ const routes = [
   ]
 // 实例化路由
 let router = new VueRouter({
-    // mode:'history',
+    mode:'history',
+    // base:'/dist/',
     routes
 });
 
@@ -90,7 +91,7 @@ router.beforeEach((to,from,next)=>{
   //做路由拦截
   if(to.meta.requireAuth){
     // 判断是否登录
-    if(sessionStorage.getItem('token')){
+    if(localStorage.getItem('token')){
       // if(router.app.$store.state.token){
           next();
       }else{

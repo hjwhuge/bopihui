@@ -64,7 +64,7 @@ export default {
                 this.$axios(
                     {
                         method: 'post',
-                        url: 'http://localhost:5010/cart',
+                        url: 'http://hujiawei.top:5010/cart',
                         data: {
                             id:this.goods.id,
                             num:this.num+m,
@@ -81,7 +81,7 @@ export default {
                 this.$axios(
                     {
                         method: 'put',
-                        url: 'http://localhost:5010/cart',
+                        url: 'http://hujiawei.top:5010/cart',
                         data: {
                             id:this.goods.id,
                             title:this.goods.title,
@@ -115,7 +115,7 @@ export default {
     toCart(id){
         this.$router.go(-1);
         // 查询
-        this.$axios.get(`http://localhost:5010/cart?id=${id}`).then(res=>{
+        this.$axios.get(`http://hujiawei.top:5010/cart?id=${id}`).then(res=>{
             // n用来判断当前数据是否存在数据库，m用来获取之前存在数据库的数量
             let n = res.data.data.length;
             let m = null;
@@ -124,7 +124,7 @@ export default {
             }else{
                 m = res.data.data[0].num;
             }
-            console.log(n,m)
+            // console.log(n,m)
             // console.log('res',res,n)
             this.callback(n,m)
         })
@@ -137,7 +137,7 @@ export default {
   created() {
     let id = this.$route.params.id;
     // console.log(id)
-    this.$axios.get(`http://localhost:5010/detail?id=${id}`).then(res=>{
+    this.$axios.get(`http://hujiawei.top:5010/detail?id=${id}`).then(res=>{
         let goods = res.data.data[0];
         this.goods = goods;
         // console.log(this.goods)

@@ -65,13 +65,13 @@ export default {
   methods:{
         goto(){
             this.telnumber = this.$refs.inf.value;
-            storage["a"]=this.telnumber;
-            var a=storage.a;
-            if(a){
+            storage["token"]=this.telnumber;
+            var token=storage.token;
+            if(token){
                 this.$router.push({path:'home'});
                 this.$refs.inf.value = "";
             }else{
-                console.log(2);
+                // console.log(2);
             }
         },
         goback:function(){
