@@ -14,7 +14,7 @@ module.exports = {
     output:{
         path:path.resolve(__dirname,'./dist/'), //打包文件存放路径
         filename:'js/[name][hash:5].js',
-        // publicPath:'/'
+        publicPath:'/'
     },
 
     // 编译模式
@@ -24,6 +24,7 @@ module.exports = {
     devServer:{
         contentBase:'./src/',
         port:2809,
+
         //默认是localhost访问
         // host:'0.0.0.0',//localhost,127.0.0.1,ip地址都可以访问
         // open:true,
