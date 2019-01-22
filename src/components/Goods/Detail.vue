@@ -2,8 +2,8 @@
     <div class="details">
       <!-- 头部 -->
     	<mt-header fixed title="商品详情">
-        <mt-button slot="left">
-          <svg class="icon" @click="goBack" aria-hidden="true">
+        <mt-button slot="left" @click="goBack">
+          <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-fanhui"></use>
           </svg>
         </mt-button>
@@ -130,7 +130,7 @@ export default {
   },
   methods:{
     goBack(){
-      this.$router.go(-1)
+      this.$router.replace('/home')
     },
     toHome(){
       this.$router.push('/home')
@@ -166,6 +166,9 @@ export default {
           // console.log(this.lick)
       }).catch(() => {});
       
-  }
+  },
+  mounted() {
+    window.scroll(0,0)
+  },
 }
 </script>

@@ -54,7 +54,10 @@ const routes = [
     { 
       name:'AddCart', 
       path: '/addCart/:id', 
-      component: AddCart
+      component: AddCart,
+      meta:{
+        requireAuth:true
+      }
     },
     // seen传1可以看见底部菜单，0不可以看见底部菜单
     { name:'Cart', path: '/Goods/cart/:seen', component: Cart,meta:{requireAuth:true}},
@@ -80,8 +83,7 @@ const routes = [
   ]
 // 实例化路由
 let router = new VueRouter({
-    mode:'history',
-    // base:'/dist/',
+    // mode:'history',
     routes
 });
 

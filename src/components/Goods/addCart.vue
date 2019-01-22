@@ -2,8 +2,8 @@
     <div class="addCart">
     <!-- 头部 -->
     	<mt-header title="加入购物车">
-        <mt-button slot="left">
-          <svg class="icon" aria-hidden="true" @click="goBack">
+        <mt-button slot="left" @click="goBack">
+          <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-fanhui"></use>
           </svg>
         </mt-button>

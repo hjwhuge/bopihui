@@ -2,16 +2,18 @@
     <div class="page">
 
         <div class="top">
-            <div class="tople" @click="goback">
-
-            </div>
+            <mt-button slot="left" @click="goback">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fanhui"></use>
+                </svg>
+            </mt-button>
             <div class="topcot">
                 登录
             </div>
             <div class="topri">
-                    <svg class="icon" aria-hidden="true">
+                <!-- <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-sousuo" class="lcon"></use>
-                </svg>
+                </svg> -->
             </div>
         </div>
         <div class="login">
@@ -88,14 +90,13 @@ export default {
           background: #e53935;
           height: .653333rem;
           width: 100%;
-          .tople{
-              font-size:30px;
-              height: .24rem;
-              line-height: .24rem;
-              padding: .173333rem 0 0 .133333rem;
-              min-width: .666667rem;
-              float:left;
+          .mint-button{
               color:#fff;
+              background: #e53935;
+              box-shadow: none;
+              position:absolute;
+              left:0;
+              top:.04rem;
           }
           .topcot{
               width:3.466667rem;

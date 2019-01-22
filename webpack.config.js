@@ -97,14 +97,15 @@ module.exports = {
             // 图片的处理：依赖file-loader
             {
                 test:/\.(jpe?g|png|gif|bmp)$/,
-                use:{
-                    loader:'url-loader',
-                    options:{
-                        // 设置转换base64编码的临界值
-                        limit:10000,
-                        name:'img/[name].[hash:5].[ext]'
+                use:
+                    {
+                        loader:'url-loader',
+                        options:{
+                            // 设置转换base64编码的临界值
+                            limit:10000,
+                            name:'img/[name].[hash:5].[ext]'
+                        }
                     }
-                }
             }
         ]
     },
