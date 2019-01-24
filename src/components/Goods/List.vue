@@ -87,7 +87,7 @@ export default {
         }
     },
     created(){
-        this.$axios.get("http://hujiawei.top:5010/list")
+        this.$axios.get("/list")
         .then(res => {
                 // console.log(res.data.data);
                 // 根据条件获取不同分类的数据

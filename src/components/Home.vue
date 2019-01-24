@@ -229,7 +229,7 @@ export default {
     created() {
 
         // 获取首页静态图片
-        this.$axios.get("http://hujiawei.top:5010/home/lb")
+        this.$axios.get("/home/lb")
 
             .then(res => {
                 // console.log(res);
@@ -249,7 +249,7 @@ export default {
                 });
             }).catch(() => {});
         // 获取轮播图和bk图片
-        this.$axios.get("http://hujiawei.top:5010/home/bk")
+        this.$axios.get("/home/bk")
             .then(res => {
 
                 this.bk = res.data.data.filter(item => {

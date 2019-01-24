@@ -46,6 +46,24 @@ axios.interceptors.response.use(data => {
     return Promise.reject(error)
 })
 
+
+
+
+
+/*  
+    baseURL相关操作
+        axions下面的baseURL属性：`baseURL`将被添加到`url`前面，除非`url`是绝对的
+            eg：baseURL: 'https://hujiawei.top/',url:'/home'  最终访问网址：https://hujiawei.top/home
+*/
+
+// 引入全局变量，用来指定base_url
+import global_ from './config/global.js';
+// 把全局变量写入vue下
+Vue.prototype.GLOBAL = global_;
+// 设置baseURL
+axios.defaults.baseURL = global_.BASE_URL;
+
+
 export default {
     data() {
         return {

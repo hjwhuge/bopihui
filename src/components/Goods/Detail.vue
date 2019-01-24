@@ -150,13 +150,13 @@ export default {
     this.goodsId = id;
     // console.log(this.$route.params.id)
       //this.$route.params.id:获取动态路由后面的id
-    this.$axios.get(`http://hujiawei.top:5010/detail?id=${id}`).then(res=>{
+    this.$axios.get(`/detail?id=${id}`).then(res=>{
         let goods = res.data.data[0];
         this.goods = goods;
         // console.log(this.goods)
       })
 
-    this.$axios.get("http://hujiawei.top:5010/home/bk")
+    this.$axios.get("/home/bk")
       .then(res => {
         // console.log(res)
           this.lick = res.data.data.filter(item => {
